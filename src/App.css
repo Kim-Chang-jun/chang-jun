@@ -12,15 +12,19 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+/* 'https://budgetreport.com/wp-content/uploads/2020/06/mechanical-keyboard-close-up.jpg' */
 .App-header {
-  background-color: #282c34;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url('https://budgetreport.com/wp-content/uploads/2020/06/mechanical-keyboard-close-up.jpg');
+  background-blend-mode: hard-light;
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(20px + 2vmin);
   color: white;
 }
 
