@@ -10,7 +10,7 @@ import python from '../Image/Python.png'
 import git from '../Image/git.png'
 import html from '../Image/Html.png'
 import css from '../Image/Css.png'
-
+import me from "../Image/Me.bmp";
 const Intro = () => {
 
     return <div className='Intro'>
@@ -19,10 +19,11 @@ const Intro = () => {
         </div>
         <div className='Intro-Card-Div'>
             <div className='card-a'>
-                <img className='card-Image' src={Avatar} alt="Avatar" />
+                <img className='card-Image' src={me} alt="Avatar" />
                 <div className='container'>
                     <h4><p>Front-end developer</p></h4>
-                    <p><h3>김창준</h3>Kim Changjun</p>
+                    <h3>김창준</h3>
+                    <p>Kim Changjun</p>
                     <p>010-6247-8619</p>
                     <p><a href="mailto:ckdwns7463@naver.com" >ckdwns7463@naver.com</a></p>
                     <p><a href="https://github.com/loger-kcj">github.com/loger-kcj</a></p>

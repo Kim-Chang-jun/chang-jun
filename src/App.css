@@ -86,7 +86,11 @@
   margin-bottom: 5vh;
 }
 .card-Image{
-  width: 15vmax;
+  width: 20vmin;
+  height: 20vmin;
+  object-fit: contain;
+  border-bottom-left-radius: 25vmin;
+  border-bottom-right-radius: 25vmin;
 }
 
 .card:hover {
@@ -98,11 +102,13 @@
   align-items: flex-start;
   justify-content: flex-start;
   text-align: left;
+  font-size: calc(8px + 1vmin);
+
 }
 
 a:link { color: black; text-decoration: none;}
 a:visited { color: black; text-decoration: none;}
-a:hover { color: black; font-weight: bold; text-decoration: underline;}
+a:hover { color: black; text-decoration: underline;}
 
 .skills{
   display: flex;
@@ -144,6 +150,10 @@ a:hover { color: black; font-weight: bold; text-decoration: underline;}
     flex-direction: column; 
     justify-content: center;
     align-items: center;
+  }
+
+  .card{
+    width: 80vw;
   }
 
   .skills{
