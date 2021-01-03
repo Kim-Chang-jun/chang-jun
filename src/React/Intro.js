@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useSpring, animated } from 'react-spring'
+import React from 'react';
 import '../App.css';
-import Avatar from '../Image/A.jpg'
 import firebase from '../Image/firebase.png'
 import flutter from '../Image/Flutter.png'
 import reactnative from '../Image/React-Native.png'
@@ -25,8 +23,8 @@ const Intro = () => {
                     <h3>김창준</h3>
                     <p>Kim Changjun</p>
                     <p>010-6247-8619</p>
-                    <p><a href="mailto:ckdwns7463@naver.com" >ckdwns7463@naver.com</a></p>
-                    <p><a href="https://github.com/loger-kcj">github.com/loger-kcj</a></p>
+                    <p><a href="mailto:ckdwns7463@naver.com" target='blank' >ckdwns7463@naver.com</a></p>
+                    <p><a href="https://github.com/loger-kcj" target='blank'>github.com/loger-kcj</a></p>
                 </div>
             </div>
             <div className='card'>
@@ -39,7 +37,7 @@ const Intro = () => {
                         ocr 어플리케이션 제작 프로젝트를 진행중 앱 프론트-엔드에 대한 관심이 높아져 교육 과정 중 더 많은 지식을 습득하기 위해 노력했습니다.
                         <br /><br />
                         수료 이후 Loger에서 Flutter, React-Native 를 통한 하이브리드 앱 개발 업무를 수행하면서 프론트-엔드로써의 역량을 쌓아왔습니다.
-                        기능 구현을 해낼때의 즐거움을 즐기고 있으며 새로운 것들을 배워나가고 기존의 것들을 발전시키는것을 목표로 하고있습니다.
+                        기능 구현을 해낼때의 즐거움을 즐기고 있으며 계속해서 새로운 것들을 배워나가고 기존의 것들을 발전시키는것을 목표로 하고있습니다.
                     </p>
                     </div>
                     <br />

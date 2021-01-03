@@ -1,47 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import gaap_Logo from "../Image/gaap_Splash.png";
 import '../App.css';
 
-import GaapModal from "./GaapModal";
+import GaapModal from "./Modal/GaapModal";
+import GDModal from "./Modal/GDModal";
+import YttModal from "./Modal/YttModal";
+import QRModal from "./Modal/QRModal";
 
 import GD from "../Image/GD.png";
-
+import Ytt from "../Image/Ytt.png";
 import QR_B from "../Image/QR_B.png";
 
 import X from "../Image/X.png";
 const Project = () => {
-    const [modalVisible, setModalVisible] = useState(false);
 
-    const SwitchVisible = () => {
+    const [modalVisibleGaap, setModalVisibleGaap] = useState(false);
+    const [modalVisibleGD, setModalVisibleGD] = useState(false);
+    const [modalVisibleYtt, setModalVisibleYtt] = useState(false);
+    const [modalVisibleQR, setModalVisibleQR] = useState(false);
+
+    const [modalVisible, setModalVisible] = useState(false);
+    const [clickResult, setClickResult] = useState('');
+    const SwitchVisible = ({ click }) => {
+        if (click == 'gaap') setModalVisibleGaap(!modalVisibleGaap)
+        if (click == 'GD') setModalVisibleGD(!modalVisibleGD)
+        if (click == 'Ytt') setModalVisibleYtt(!modalVisibleYtt)
+        if (click == 'QR') setModalVisibleQR(!modalVisibleQR)
         setModalVisible(!modalVisible)
     }
 
     const clickEvent = ({ click }) => {
         console.log(click)
+        SwitchVisible({ click: click });
+        setClickResult(click);
     }
+
+    useEffect(() => {
+        if (modalVisible) document.body.style.overflow = 'hidden';
+        else document.body.style.overflow = 'unset';
+    }, [modalVisible]);
 
     return <div className='Project'>
         <div>
             <p className='Project-Title'>PROJECT</p>
         </div>
-        {modalVisible ? <div className='Modal' onClick={() => { SwitchVisible(); }}>
-            <div className='Modal-False'> <img className='X_btn' src={X} alt='x' /></div>
+        {modalVisible ? <div className='Modal'>
+            <div className='Modal-False'> <img className='X_btn' src={X} alt='x' onClick={() => { SwitchVisible({ click: clickResult }); }} /></div>
             <div className='Modal-Inner'>
-                <p>소개</p>
+                <p className='Modal-Inner-Title'>More Information</p>
                 <div>
-                    <GaapModal />
+                    {clickResult == 'gaap' && <GaapModal />}
+                    {clickResult == 'GD' && < GDModal />}
+                    {clickResult == 'Ytt' && < YttModal />}
+                    {clickResult == 'QR' && < QRModal />}
                 </div>
             </div>
         </div> : null}
         <div className='Project-List'>
-            <div className='Project-Details' onClick={() => { clickEvent({ click: 'gaap' }); SwitchVisible(); }}>
+            <div className='Project-Details' onClick={() => { clickEvent({ click: 'gaap' }); }}>
                 <img className='App-Logo' src={gaap_Logo} alt='gaap' />
                 <div className='App-Text'>
-                    <b>Gaap</b>
-                    <p>Flutter로 League of Legends 전적 검색 및 게임중인 소환사 비교
-                        <br />의사소통을 위한 게시판
-                        <br />Firebase를 이용하여 Google Sign in과  League of Legends api에서 받는 소환사명을 연동하여 로그인
-                        <br />Google Admob를 이용한 광고
+                    <p className='App-Text-Title'>Gaap</p>
+                    <p>League of Legends 전적 검색 및 게임중인 소환사 비교 + 커뮤니티
+                        <br />2020/05 ~ 2020/07
+                        <br />Flutter
                     </p>
                 </div>
             </div>
@@ -49,22 +71,42 @@ const Project = () => {
             <div className='Project-Details' onClick={() => { clickEvent({ click: 'GD' }) }}>
                 <img className='App-Logo' src={GD} alt='배달앱' />
                 <div className='App-Text'>
-                    <b>광주 배달앱</b>
-                    <p>React Native로 목업용 앱 제작
-                    <br />매장에서 음식 장바구니에 담기까지 개발
-                    <br />&nbsp;
-                    <br />&nbsp;
+                    <p className='App-Text-Title'>배달 앱</p>
+                    <p>매장에서 음식 장바구니에 담기까지 개발
+                    <br />2020/08 ~ 2020/09
+                    <br />React Native 
                     </p>
                 </div>
             </div>
-            <div className='Project-Details' onClick={() => { clickEvent({ click: 'gaap' }) }}>
+            <div className='Project-Details' onClick={() => { clickEvent({ click: 'Ytt' }) }}>
+                <img className='App-Logo' src={Ytt} alt='Ytt' />
+                <div className='App-Text'>
+                    <p className='App-Text-Title'>어제 오늘 내일</p>
+                    <p>어제 오늘 내일에 대한 날씨를 확인하는 앱
+                    <br />2020/07 ~ 2020/09
+                        <br />React Native
+                    </p>
+                </div>
+            </div>
+            <div className='Project-Details' onClick={() => { clickEvent({ click: 'QR' }) }}>
                 <img className='App-Logo' src={QR_B} alt='QR_B' />
                 <div className='App-Text'>
-                    <b>큐아리</b>
-                    <p>React Native로 사업자용 개인용 앱 제작
-                        <br />개인용 앱으로 QR코드를 인식 하여 사업자용 앱에서 확인
-                        <br />개인의 방문기록을 확인 및 삭제 가능
-                        <br />시업자용 앱에서 실시간 입장기록 확인
+                    <p className='App-Text-Title'>QR 체크 앱</p>
+                    <p>매장에 QR코드를 부착하여 이용하는 개인용, 사업자용 앱
+                        <br />2020/10 ~ 2020/12
+                        <br />React Native
+                    </p>
+                </div>
+            </div>
+            <div className='Project-Details'>
+                <div className='App-Logo' alt='etc' />
+                <div className='App-Text'>
+                    <p className='App-Text-Title'>ETC</p>
+                    <p>Flutter {'>'} Google Maps api를 이용한 위치 확인 및 경로 구하기
+                        <br />React Native {'>'} firebase를 이용하여 google 및 Apple Authentication, 카카오 로그인
+                        <br />Python {'>'} face recognition을 이용한 영상 및 사진에서 얼굴 검출,
+                        중고나라 + 번개장터 크롤링을 통한 에어팟 중고거래 가격 예측
+                        <br />
                     </p>
                 </div>
             </div>
