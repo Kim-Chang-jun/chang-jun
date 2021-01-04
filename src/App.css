@@ -185,6 +185,7 @@ a:hover { color: blue; text-decoration: underline;}
 
 .Project-Details:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 
