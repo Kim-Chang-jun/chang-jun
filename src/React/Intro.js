@@ -24,7 +24,7 @@ const Intro = () => {
                     <p>Kim Changjun</p>
                     <p>010-6247-8619</p>
                     <p><a href="mailto:ckdwns7463@naver.com" target='blank' >ckdwns7463@naver.com</a></p>
-                    <p><a href="https://github.com/loger-kcj" target='blank'>github.com/loger-kcj</a></p>
+                    <p><a href="https://github.com/Kim-Chang-jun" target='blank'>https://github.com/Kim-Chang-jun</a></p>
                 </div>
             </div>
             <div className='card'>
