@@ -21,9 +21,9 @@
 }
 /* 'https://budgetreport.com/wp-content/uploads/2020/06/mechanical-keyboard-close-up.jpg' */
 .App-header {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 1);
   background-image: url('https://budgetreport.com/wp-content/uploads/2020/06/mechanical-keyboard-close-up.jpg');
-  background-blend-mode: hard-light;
+  background-blend-mode: darken;
   background-size: cover;
   background-repeat: no-repeat;
   min-width: 90vw;
@@ -31,7 +31,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(20px + 2vmin);
   color: white;
   top:0;
@@ -45,7 +44,7 @@
 
 .Intro{
   min-width: 90vw;
-  min-height: 80vh;
+  min-height: 110vh;
   display: flex;
   z-index: 1;
   flex-direction: column;
@@ -239,7 +238,7 @@ a:hover { color: blue; text-decoration: underline;}
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   padding: 8px 16px;
-  border-radius: 4%;
+  border-radius: 15px;
 }
 
 .Modal-Inner-Title{
@@ -263,6 +262,8 @@ a:hover { color: blue; text-decoration: underline;}
 }
 
 .Modal-Details-Text{
+  padding-left: 2vw;
+  background-color: rgba(52,52,52,0.2);
   text-align: left;
   max-height: inherit;
   line-height: 1.8;
