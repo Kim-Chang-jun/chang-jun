@@ -34,6 +34,7 @@ const YttModal = () => {
                     <li>geolocation를 이용하여 기기의 lat long 값을 확인합니다.</li>
                     <li>reverse geolocation를 이용하여 기기의 위치명을 얻습니다.</li>
                     <li>openweathermap api를 이용하여 날씨 표시합니다.</li>
+                    <li>Context Api를 이용하여 전역변수를 관리합니다.</li>
                     <li>async storage로 위치를 저장하고 불러옵니다.</li>
                     <li>native ad를사용해서 광고를 표시합니다.</li>
                     <li>

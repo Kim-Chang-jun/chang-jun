@@ -34,7 +34,8 @@ const GDModal = () => {
                 <p>
                     {" "}
                     <li>JSON에서 받아온 값을 이용하여 매장 목록을 확인합니다.</li>
-                    <li>useContext를 이용하여 장바구니 구현했습니다.</li>
+                    <li>Context Api를 이용하여 전역변수를 관리합니다.</li>
+                    <li>매장선택, 음식선택,장바구니까지 구현했습니다.</li>
                     <li>swiper를 이용한 광고 및 공지사항 화면을 제작했습니다.</li>
                     <li>다양한 navigation을 이용해서 화면이동을 합니다.</li>
                 </p>

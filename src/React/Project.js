@@ -14,7 +14,7 @@ import Ytt from "../Image/Ytt.png";
 import QR_B from "../Image/QR_B.png";
 
 import X from "../Image/X.png";
-const Project = ({ projectAni }) => {
+const Project = ({ projectAni, Ani }) => {
     const [modalVisibleGaap, setModalVisibleGaap] = useState(false);
     const [modalVisibleGD, setModalVisibleGD] = useState(false);
     const [modalVisibleYtt, setModalVisibleYtt] = useState(false);
@@ -43,13 +43,9 @@ const Project = ({ projectAni }) => {
 
     return (
         <animated.div className="Project" style={projectAni}>
-            <div>
-                <p className="Project-Title">PROJECT</p>
-            </div>
             {modalVisible ? (
                 <div className="Modal">
                     <div className="Modal-False">
-                        {" "}
                         <img
                             className="X_btn"
                             src={X}
@@ -70,8 +66,12 @@ const Project = ({ projectAni }) => {
                     </div>
                 </div>
             ) : null}
+            <div>
+                <p className="Project-Title">PROJECT</p>
+            </div>
             <div className="Project-List">
-                <div
+                <animated.div
+                    style={Ani[0]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "gaap" });
@@ -88,9 +88,10 @@ const Project = ({ projectAni }) => {
                             Flutter
                         </p>
                     </div>
-                </div>
+                </animated.div>
 
-                <div
+                <animated.div
+                    style={Ani[1]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "GD" });
@@ -107,8 +108,9 @@ const Project = ({ projectAni }) => {
                             React Native
                         </p>
                     </div>
-                </div>
-                <div
+                </animated.div>
+                <animated.div
+                    style={Ani[2]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "Ytt" });
@@ -125,8 +127,9 @@ const Project = ({ projectAni }) => {
                             React Native
                         </p>
                     </div>
-                </div>
-                <div
+                </animated.div>
+                <animated.div
+                    style={Ani[3]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "QR" });
@@ -143,8 +146,8 @@ const Project = ({ projectAni }) => {
                             React Native
                         </p>
                     </div>
-                </div>
-                <div className="Project-Details">
+                </animated.div>
+                <animated.div style={Ani[4]} className="Project-Details">
                     <div className="App-Logo" alt="etc" />
                     <div className="App-Text">
                         <p className="App-Text-Title">ETC</p>
@@ -157,7 +160,7 @@ const Project = ({ projectAni }) => {
                             <br />
                         </p>
                     </div>
-                </div>
+                </animated.div>
             </div>
         </animated.div>
     );
