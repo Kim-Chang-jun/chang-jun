@@ -79,8 +79,8 @@ function App() {
     });
 
     const ETCAni = useSpring({
-        opacity: currentScroll < size.height * 3.15 ? "0" : "1",
-        transform: currentScroll < size.height * 3.15 ? "translate(0px, 200px)" : "translate(0px, 0px)",
+        opacity: currentScroll < size.height * 3 ? "0" : "1",
+        transform: currentScroll < size.height * 3 ? "translate(0px, 200px)" : "translate(0px, 0px)",
         from: { backgroundColor: currentScroll < size.height * 1.5 ? "1" : "0", transform: currentScroll < size.height * 1.5 ? "translate(0px, 0px)" : "translate(0px, 200px)" },
         config: { duration: 700, tension: 300 },
     });

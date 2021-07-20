@@ -87,7 +87,7 @@ const Project = ({ projectAni, Ani }) => {
                         <p>
                             120여 기관에 분산된 정보를 통합, 분석해주는 데이터 기반의 핀테크 서비스
                             <br />
-                            2021/02 ~
+                            2021/02 ~ 진행중
                             <br />
                             React-Native
                         </p>
