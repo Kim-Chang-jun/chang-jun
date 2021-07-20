@@ -35,6 +35,11 @@ const Intro = () => {
                                 https://github.com/Kim-Chang-jun
                             </a>
                         </p>
+                        <p>
+                            <a href="https://www.jangboo.kr/" target="blank">
+                                (주)푸드노트서비스
+                            </a>
+                        </p>
                     </div>
                 </div>
                 <div className="card">
@@ -51,14 +56,20 @@ const Intro = () => {
                                 ocr 어플리케이션 제작 프로젝트를 진행중 앱 프론트-엔드에 대한 관심이 높아져 교육 과정 중 더 많은 지식을 습득하기 위해 노력했습니다.
                                 <br />
                                 <br />
-                                수료 이후 Loger에서 Flutter, React-Native 를 통한 하이브리드 앱 개발 업무를 수행하면서 프론트-엔드로써의 역량을 쌓아왔습니다. 새로운 기능을 구현하는것을 즐기고
-                                있으며 기존에 배운 것들을 발전시키고 새로운 것들을 배우는것을 목표로 하고있습니다.
+                                수료 이후 Loger에서 Flutter, React-Native 를 통한 하이브리드 앱 개발 업무를 수행하면서 프론트-엔드로써의 역량을 쌓아왔습니다.
+                                <br />
+                                <br />
+                                현재 푸드노트서비스(주)에서 React-Native 를 이용하여 매출 정산 손익을 관리하는 앱 개발에 참여하였으며 유지 보수 중입니다.
+                                <br />
+                                <br />
+                                새로운 기능을 구현하는것을 즐기고 있으며 기존에 배운 것들을 발전시키고 새로운 것들을 배우는것을 목표로 하고있습니다.
                             </p>
                         </div>
                         <br />
                         <br />
                         <h2>SKILLS</h2>
                         <div className="skills">
+                            4
                             <div className="skill_list">
                                 <div className="skillsBox">
                                     <img className="skills-Image" src={js} alt="js" />

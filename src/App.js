@@ -43,37 +43,44 @@ function App() {
         config: { duration: 500 },
     });
 
-    const GAAPAni = useSpring({
+    const JBAni = useSpring({
         opacity: currentScroll < size.height * 1.65 ? "0" : "1",
         transform: currentScroll < size.height * 1.65 ? "translate(0px, 200px)" : "translate(0px, 0px)",
         from: { backgroundColor: currentScroll < size.height * 1.5 ? "1" : "0", transform: currentScroll < size.height * 1.5 ? "translate(0px, 0px)" : "translate(0px, 200px)" },
         config: { duration: 700, tension: 300, friction: 12 },
     });
 
-    const GDAni = useSpring({
+    const GAAPAni = useSpring({
         opacity: currentScroll < size.height * 1.95 ? "0" : "1",
         transform: currentScroll < size.height * 1.95 ? "translate(0px, 200px)" : "translate(0px, 0px)",
+        from: { backgroundColor: currentScroll < size.height * 1.5 ? "1" : "0", transform: currentScroll < size.height * 1.5 ? "translate(0px, 0px)" : "translate(0px, 200px)" },
+        config: { duration: 700, tension: 300, friction: 12 },
+    });
+
+    const GDAni = useSpring({
+        opacity: currentScroll < size.height * 2.25 ? "0" : "1",
+        transform: currentScroll < size.height * 2.25 ? "translate(0px, 200px)" : "translate(0px, 0px)",
         from: { backgroundColor: currentScroll < size.height * 1.5 ? "1" : "0", transform: currentScroll < size.height * 1.5 ? "translate(0px, 0px)" : "translate(0px, 200px)" },
         config: { duration: 700, tension: 300 },
     });
 
     const YTTAni = useSpring({
-        opacity: currentScroll < size.height * 2.25 ? "0" : "1",
-        transform: currentScroll < size.height * 2.25 ? "translate(0px, 200px)" : "translate(0px, 0px)",
+        opacity: currentScroll < size.height * 2.55 ? "0" : "1",
+        transform: currentScroll < size.height * 2.55 ? "translate(0px, 200px)" : "translate(0px, 0px)",
         from: { backgroundColor: currentScroll < size.height * 1.5 ? "1" : "0", transform: currentScroll < size.height * 1.5 ? "translate(0px, 0px)" : "translate(0px,200px)" },
         config: { duration: 700, tension: 300 },
     });
 
     const QRAni = useSpring({
-        opacity: currentScroll < size.height * 2.55 ? "0" : "1",
-        transform: currentScroll < size.height * 2.55 ? "translate(0px, 200px)" : "translate(0px, 0px)",
+        opacity: currentScroll < size.height * 2.85 ? "0" : "1",
+        transform: currentScroll < size.height * 2.85 ? "translate(0px, 200px)" : "translate(0px, 0px)",
         from: { backgroundColor: currentScroll < size.height * 1.5 ? "1" : "0", transform: currentScroll < size.height * 1.5 ? "translate(0px, 0px)" : "translate(0px, 200px)" },
         config: { duration: 700, tension: 300 },
     });
 
     const ETCAni = useSpring({
-        opacity: currentScroll < size.height * 2.85 ? "0" : "1",
-        transform: currentScroll < size.height * 2.85 ? "translate(0px, 200px)" : "translate(0px, 0px)",
+        opacity: currentScroll < size.height * 3.15 ? "0" : "1",
+        transform: currentScroll < size.height * 3.15 ? "translate(0px, 200px)" : "translate(0px, 0px)",
         from: { backgroundColor: currentScroll < size.height * 1.5 ? "1" : "0", transform: currentScroll < size.height * 1.5 ? "translate(0px, 0px)" : "translate(0px, 200px)" },
         config: { duration: 700, tension: 300 },
     });
@@ -84,7 +91,7 @@ function App() {
                 {size.height && <Hello size={size} currentScroll={currentScroll} />}
             </animated.header>
             <Intro />
-            <Project projectAni={projectAni} Ani={[GAAPAni, GDAni, YTTAni, QRAni, ETCAni]} />
+            <Project projectAni={projectAni} Ani={[JBAni, GAAPAni, GDAni, YTTAni, QRAni, ETCAni]} />
         </animated.div>
     );
 }

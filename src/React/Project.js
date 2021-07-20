@@ -8,21 +8,24 @@ import GaapModal from "./Modal/GaapModal";
 import GDModal from "./Modal/GDModal";
 import YttModal from "./Modal/YttModal";
 import QRModal from "./Modal/QRModal";
+import JangbooModal from "./Modal/JangbooModal";
 
 import GD from "../Image/GD.png";
 import Ytt from "../Image/Ytt.png";
 import QR_B from "../Image/QR_B.png";
-
+import Jangboo from "../Image/JANGBOO.png";
 import X from "../Image/X.png";
 const Project = ({ projectAni, Ani }) => {
     const [modalVisibleGaap, setModalVisibleGaap] = useState(false);
     const [modalVisibleGD, setModalVisibleGD] = useState(false);
     const [modalVisibleYtt, setModalVisibleYtt] = useState(false);
     const [modalVisibleQR, setModalVisibleQR] = useState(false);
+    const [modalVisibleJB, setModalVisibleJB] = useState(false);
 
     const [modalVisible, setModalVisible] = useState(false);
     const [clickResult, setClickResult] = useState("");
     const SwitchVisible = ({ click }) => {
+        if (click == "jb") setModalVisibleJB(!modalVisibleJB);
         if (click == "gaap") setModalVisibleGaap(!modalVisibleGaap);
         if (click == "GD") setModalVisibleGD(!modalVisibleGD);
         if (click == "Ytt") setModalVisibleYtt(!modalVisibleYtt);
@@ -58,6 +61,7 @@ const Project = ({ projectAni, Ani }) => {
                     <div className="Modal-Inner">
                         <p className="Modal-Inner-Title">More Information</p>
                         <div>
+                            {clickResult == "jb" && <JangbooModal />}
                             {clickResult == "gaap" && <GaapModal />}
                             {clickResult == "GD" && <GDModal />}
                             {clickResult == "Ytt" && <YttModal />}
@@ -72,6 +76,25 @@ const Project = ({ projectAni, Ani }) => {
             <div className="Project-List">
                 <animated.div
                     style={Ani[0]}
+                    className="Project-Details"
+                    onClick={() => {
+                        clickEvent({ click: "jb" });
+                    }}
+                >
+                    <img className="App-Logo" src={Jangboo} alt="jb" />
+                    <div className="App-Text">
+                        <p className="App-Text-Title">장부대장</p>
+                        <p>
+                            120여 기관에 분산된 정보를 통합, 분석해주는 데이터 기반의 핀테크 서비스
+                            <br />
+                            2021/02 ~
+                            <br />
+                            React-Native
+                        </p>
+                    </div>
+                </animated.div>
+                <animated.div
+                    style={Ani[1]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "gaap" });
@@ -91,7 +114,7 @@ const Project = ({ projectAni, Ani }) => {
                 </animated.div>
 
                 <animated.div
-                    style={Ani[1]}
+                    style={Ani[2]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "GD" });
@@ -110,7 +133,7 @@ const Project = ({ projectAni, Ani }) => {
                     </div>
                 </animated.div>
                 <animated.div
-                    style={Ani[2]}
+                    style={Ani[3]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "Ytt" });
@@ -128,8 +151,9 @@ const Project = ({ projectAni, Ani }) => {
                         </p>
                     </div>
                 </animated.div>
+
                 <animated.div
-                    style={Ani[3]}
+                    style={Ani[4]}
                     className="Project-Details"
                     onClick={() => {
                         clickEvent({ click: "QR" });
@@ -147,7 +171,8 @@ const Project = ({ projectAni, Ani }) => {
                         </p>
                     </div>
                 </animated.div>
-                <animated.div style={Ani[4]} className="Project-Details">
+
+                <animated.div style={Ani[5]} className="Project-Details">
                     <div className="App-Logo" alt="etc" />
                     <div className="App-Text">
                         <p className="App-Text-Title">ETC</p>
