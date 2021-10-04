@@ -69,7 +69,6 @@ const Intro = () => {
                         <br />
                         <h2>SKILLS</h2>
                         <div className="skills">
-                            4
                             <div className="skill_list">
                                 <div className="skillsBox">
                                     <img className="skills-Image" src={js} alt="js" />
