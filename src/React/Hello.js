@@ -2,18 +2,21 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import "../App.css";
 
-const Hello = ({ size, currentScroll }) => {
-    const [lang, setlang] = useState("Flutter");
-    const [state, setState] = useState(false);
+import React, { useState, useEffect } from 'react';
+import { useSpring, animated } from '@react-spring/web';
 
-    const props = useSpring({
+const Hello = ({ size, currentScroll }) => {
+    const langs = ["React Native", "하이브리드 앱","React"];
+    const [index, setIndex] = useState(0);
+    const [visible, setVisible] = useState(true);
+
+    const textProps = useSpring({
+        opacity: visible ? 1 : 0,
         fontWeight: "bold",
-        config: { duration: 1400 },
-        opacity: state == true ? 0 : 1,
-        from: { opacity: state == true ? 1 : 0 },
+        config: { duration: 1000 }, 
     });
 
-    const total = useSpring({
+    const totalProps = useSpring({
         color: currentScroll < size.height * 0.8 ? "white" : "black",
         opacity: currentScroll < size.height * 0.8 ? 1 : 0,
         width: "100%",
@@ -25,30 +28,29 @@ const Hello = ({ size, currentScroll }) => {
     });
 
     useEffect(() => {
-        setTimeout(() => {
-            if (lang == "Flutter") {
-                setlang("React-native");
-            } else if (lang == "React-native") {
-                setlang("하이브리드 앱");
-            } else if (lang == "하이브리드 앱") {
-                setlang("Flutter");
-            }
-        }, 3800);
-    }, [lang]);
-
-    function LangAnimation() {
-        setTimeout(() => {
-            setState(!state);
+        const toggleTimer = setInterval(() => {
+            setVisible(prev => !prev);
         }, 1900);
-    }
 
-    useEffect(() => {
-        LangAnimation();
-    }, [state]);
+        const langTimer = setInterval(() => {
+            setIndex(prev => (prev + 1) % langs.length);
+        }, 3800);
+
+        return () => {
+            clearInterval(toggleTimer);
+            clearInterval(langTimer);
+        };
+    }, []);
 
     return (
-        <animated.div style={total}>
-            <animated.div style={props}>{lang}</animated.div> Front-End Developer <br /> 김창준의 포트폴리오 입니다
+        <animated.div style={totalProps}>
+            <div>
+                <animated.span style={textProps}>
+                    {langs[index]}
+                </animated.span> 
+                {" "}Front-End Developer <br /> 
+                김창준의 포트폴리오 입니다
+            </div>
         </animated.div>
     );
 };
